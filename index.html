@@ -1,18 +1,291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- link css -->
-     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>home page </title>
-</head>
-<body>
-    <h2> this is my first sms real website </h2>
-    <h2> this is my first sms real website </h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8f5" />
+    <meta
+      name="description"
+      content="A simple, thoughtful space to manage your text messages."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Textline — Messages</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#inbox" aria-label="Textline home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5 5.75A2.75 2.75 0 0 1 7.75 3h8.5A2.75 2.75 0 0 1 19 5.75v7.5A2.75 2.75 0 0 1 16.25 16h-4.6l-4.4 3.25V16A2.75 2.75 0 0 1 5 13.25v-7.5Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8.5 8.5h7M8.5 11.5h4"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <span>textline<span class="brand-period">.</span></span>
+        </a>
 
+        <div class="workspace-label">WORKSPACE</div>
+        <button class="workspace-switcher" type="button">
+          <span class="workspace-avatar">S</span>
+          <span class="workspace-name"
+            >Studio North<small>Personal workspace</small></span
+          >
+          <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="m4 6 4 4 4-4" />
+          </svg>
+        </button>
 
+        <div class="nav-label">MENU</div>
+        <nav class="main-nav">
+          <a class="nav-item active" href="#inbox" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 5.75A2.75 2.75 0 0 1 6.75 3h10.5A2.75 2.75 0 0 1 20 5.75v9.5A2.75 2.75 0 0 1 17.25 18h-6.5L5 21v-3.72a2.75 2.75 0 0 1-1-2.03v-9.5Z"
+              />
+              <path d="M8 9h8M8 13h5" />
+            </svg>
+            <span>Inbox</span><span class="nav-count">4</span>
+          </a>
+          <a class="nav-item" href="#starred" data-filter="starred">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="m12 3 2.78 5.63L21 9.54l-4.5 4.39 1.06 6.2L12 17.2l-5.56 2.93 1.06-6.2L3 9.54l6.22-.91L12 3Z"
+              />
+            </svg>
+            <span>Starred</span>
+          </a>
+          <a class="nav-item" href="#archived" data-filter="archived">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16v13H4zM3 4h18v3H3zM9 11h6" />
+            </svg>
+            <span>Archived</span>
+          </a>
+        </nav>
 
+        <div class="sidebar-bottom">
+          <div class="plan-note">
+            <div class="plan-icon" aria-hidden="true">✳</div>
+            <div class="plan-copy">
+              <strong>Your space, your pace.</strong
+              ><span>Keep every conversation close.</span>
+            </div>
+            <span class="plan-spark" aria-hidden="true">✦</span>
+          </div>
+          <button class="profile-button" type="button">
+            <span class="profile-avatar">AM</span>
+            <span class="profile-copy"
+              ><strong>Alex Morgan</strong><small>Personal account</small></span
+            >
+            <svg class="more-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="5" cy="12" r="1" />
+              <circle cx="12" cy="12" r="1" />
+              <circle cx="19" cy="12" r="1" />
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <section class="inbox-panel" id="inbox" aria-label="Message inbox">
+        <header class="inbox-header">
+          <div class="heading-row">
+            <div>
+              <div class="eyebrow">YOUR MESSAGES</div>
+              <h1>Inbox <span class="heading-count">4</span></h1>
+            </div>
+            <button
+              class="icon-button mobile-menu"
+              type="button"
+              aria-label="Menu"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            </button>
+          </div>
+          <div class="inbox-tools">
+            <label class="search-box"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="10.8" cy="10.8" r="6.8" />
+                <path d="m16 16 4.5 4.5" /></svg
+              ><input
+                id="search-input"
+                type="search"
+                placeholder="Search messages"
+                autocomplete="off"
+              /><kbd>/</kbd></label
+            >
+            <button
+              class="icon-button compose-button"
+              id="compose-button"
+              type="button"
+              aria-label="New message"
+              title="New message"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="filter-tabs"
+            role="tablist"
+            aria-label="Filter conversations"
+          >
+            <button
+              class="filter-tab selected"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-tab="all"
+            >
+              All <span>4</span></button
+            ><button
+              class="filter-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-tab="unread"
+            >
+              Unread <span>2</span></button
+            ><button
+              class="filter-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-tab="groups"
+            >
+              Groups
+            </button>
+          </div>
+        </header>
+        <div
+          class="conversation-list"
+          id="conversation-list"
+          aria-label="Conversations"
+        ></div>
+        <div class="list-footer">
+          <span class="online-dot"></span> You're all caught up
+        </div>
+      </section>
+
+      <section class="chat-panel" aria-label="Conversation">
+        <div class="chat-empty" id="chat-empty">
+          <div class="empty-art" aria-hidden="true">
+            <span class="art-sun"></span
+            ><span class="art-chat art-chat-back"></span
+            ><span class="art-chat art-chat-front"><i></i><i></i><i></i></span
+            ><span class="art-spark spark-one">✳</span
+            ><span class="art-spark spark-two">✦</span>
+          </div>
+          <h2>A little more connected.</h2>
+          <p>Pick a conversation and pick up right where you left off.</p>
+          <button class="primary-button" id="empty-compose" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v14M5 12h14" /></svg
+            >Start a conversation
+          </button>
+        </div>
+        <div class="chat-view" id="chat-view" hidden>
+          <header class="chat-header">
+            <div class="chat-person">
+              <button
+                class="icon-button chat-back"
+                type="button"
+                aria-label="Back to inbox"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m15 18-6-6 6-6M9 12h11" />
+                </svg></button
+              ><span class="avatar chat-avatar"></span
+              ><span class="chat-person-copy"
+                ><strong></strong><small></small
+              ></span>
+            </div>
+            <div class="chat-actions">
+              <button
+                class="icon-button"
+                type="button"
+                aria-label="Search conversation"
+                title="Search conversation"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="10.8" cy="10.8" r="6.8" />
+                  <path d="m16 16 4.5 4.5" />
+                </svg></button
+              ><button
+                class="icon-button"
+                type="button"
+                aria-label="More options"
+                title="More options"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="5" cy="12" r="1" />
+                  <circle cx="12" cy="12" r="1" />
+                  <circle cx="19" cy="12" r="1" />
+                </svg>
+              </button>
+            </div>
+          </header>
+          <div
+            class="message-stream"
+            id="message-stream"
+            aria-live="polite"
+          ></div>
+          <form class="message-form" id="message-form">
+            <div class="composer-box">
+              <textarea
+                id="message-input"
+                rows="1"
+                placeholder="Write a message..."
+                aria-label="Write a message"
+                maxlength="500"
+              ></textarea>
+              <div class="composer-bottom">
+                <span class="composer-hint"
+                  >Press <kbd>Enter</kbd> to send</span
+                >
+                <div class="composer-actions">
+                  <button
+                    class="icon-button emoji-button"
+                    type="button"
+                    aria-label="Add a smile"
+                    title="Add a smile"
+                  >
+                    ☺</button
+                  ><button
+                    class="send-button"
+                    type="submit"
+                    aria-label="Send message"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m21 3-7.5 18-3.5-7-7-3.5L21 3Z" />
+                      <path d="M10 14 21 3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
